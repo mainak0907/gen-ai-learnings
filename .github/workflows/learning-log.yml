@@ -1,0 +1,13 @@
+name: Learning Log
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update learning log
+        run: echo "Learning update at $(date)" >> LEARNING_LOG.md
